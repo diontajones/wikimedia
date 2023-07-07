@@ -18,7 +18,7 @@ response = requests.get(url, stream=True)
 
 
 for line in response.iter_lines():
-    # Skip empty lines
+    
     if line:
         message = {"message": line.decode("utf-8")}
         producer.send(
